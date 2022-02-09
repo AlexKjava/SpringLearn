@@ -22,7 +22,9 @@ public class BeanFactory {
             ClassLoader classLoader = ClassLoader.getSystemClassLoader();
             String path = basePackage.replace('.', '/'); //"com.kciray" -> "com/kciray"
             Enumeration<URL> resources = classLoader.getResources(path);
+
             while (resources.hasMoreElements()) {
+
                 URL resource = resources.nextElement();
 
                 File file = new File(resource.toURI());
